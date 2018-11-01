@@ -1,6 +1,9 @@
 package com.lunger.touchsearch;
 
 import android.content.Context;
+import android.util.AttributeSet;
+import android.util.Log;
+import android.view.MotionEvent;
 import android.widget.RelativeLayout;
 
 /**
@@ -13,5 +16,32 @@ public class RootViewGroup extends RelativeLayout {
     public RootViewGroup(Context context) {
         super(context);
     }
-    
+
+    public RootViewGroup(Context context, AttributeSet attrs) {
+        super(context, attrs);
+    }
+
+    public RootViewGroup(Context context, AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
+    }
+
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        Log.d("wbl", "RootViewGroup -> dispatchTouchEvent");
+        return super.dispatchTouchEvent(ev);
+    }
+
+    @Override
+    public boolean onInterceptTouchEvent(MotionEvent ev) {
+        Log.d("wbl", "RootViewGroup -> onInterceptTouchEvent");
+        return super.onInterceptTouchEvent(ev);
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        Log.d("wbl", "RootViewGroup -> onTouchEvent");
+        return super.onTouchEvent(event);
+    }
+
+
 }
