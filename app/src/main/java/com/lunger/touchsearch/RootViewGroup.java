@@ -27,19 +27,23 @@ public class RootViewGroup extends RelativeLayout {
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
-        Log.d("wbl", "RootViewGroup -> dispatchTouchEvent");
+        if (ev.getAction() == MotionEvent.ACTION_DOWN)
+            Log.d("wbl", "RootViewGroup -> dispatchTouchEvent");
         return super.dispatchTouchEvent(ev);
     }
 
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
-        Log.d("wbl", "RootViewGroup -> onInterceptTouchEvent");
+        if (ev.getAction() == MotionEvent.ACTION_DOWN)
+            Log.d("wbl", "RootViewGroup -> onInterceptTouchEvent");
         return super.onInterceptTouchEvent(ev);
     }
 
+
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        Log.d("wbl", "RootViewGroup -> onTouchEvent");
+        if (event.getAction() == MotionEvent.ACTION_DOWN)
+            Log.d("wbl", "RootViewGroup -> onTouchEvent");
         return super.onTouchEvent(event);
     }
 

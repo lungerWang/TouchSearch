@@ -15,26 +15,29 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         child_view = findViewById(R.id.child_view);
-        child_view.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.d("wbl", "onClick");
-            }
-        });
+//        child_view.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Log.d("wbl", "onClick");
+//            }
+//        });
     }
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
         //结论：如果返回true或者false  事件就死在这里了
         //返回super.dispatchTouchEvent(ev)时，事件才会往下传递
-        Log.d("wbl", "MainActivity -> dispatchTouchEvent");
+        if (ev.getAction() == MotionEvent.ACTION_DOWN)
+            Log.d("wbl", "MainActivity -> dispatchTouchEvent");
         return super.dispatchTouchEvent(ev);
     }
 
 
+
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        Log.d("wbl", "MainActivity -> onTouchEvent");
+        if (event.getAction() == MotionEvent.ACTION_DOWN)
+            Log.d("wbl", "MainActivity -> onTouchEvent");
         return super.onTouchEvent(event);
     }
 }

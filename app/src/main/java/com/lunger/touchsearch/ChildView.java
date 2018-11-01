@@ -12,7 +12,7 @@ import android.view.View;
  * 最内层子视图
  */
 
-public class ChildView extends View{
+public class ChildView extends View {
 
     public ChildView(Context context) {
         super(context);
@@ -28,14 +28,16 @@ public class ChildView extends View{
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
-        Log.d("wbl", "ChildView -> dispatchTouchEvent");
+        if (ev.getAction() == MotionEvent.ACTION_DOWN)
+            Log.d("wbl", "ChildView -> dispatchTouchEvent");
         return super.dispatchTouchEvent(ev);
     }
 
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        Log.d("wbl", "ChildView -> onTouchEvent");
+        if (event.getAction() == MotionEvent.ACTION_DOWN)
+            Log.d("wbl", "ChildView -> onTouchEvent");
         return super.onTouchEvent(event);
     }
 
