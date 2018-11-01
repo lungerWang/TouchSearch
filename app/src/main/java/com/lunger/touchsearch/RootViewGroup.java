@@ -27,6 +27,10 @@ public class RootViewGroup extends RelativeLayout {
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
+        // 结论：
+        // 返回true 事件会死在这里
+        // 返回false 事件传给上一层的onTouchEvent
+        // 返回super.dispatchTouchEvent(ev) 事件传给本层的onInterceptTouchEvent
         if (ev.getAction() == MotionEvent.ACTION_DOWN)
             Log.d("wbl", "RootViewGroup -> dispatchTouchEvent");
         return super.dispatchTouchEvent(ev);

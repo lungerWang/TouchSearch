@@ -25,8 +25,9 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
-        //结论：如果返回true或者false  事件就死在这里了
-        //返回super.dispatchTouchEvent(ev)时，事件才会往下传递
+        // 结论：
+        // 返回true或者false  事件就死在这里了
+        // 返回super.dispatchTouchEvent(ev)，事件往下传递
         if (ev.getAction() == MotionEvent.ACTION_DOWN)
             Log.d("wbl", "MainActivity -> dispatchTouchEvent");
         return super.dispatchTouchEvent(ev);
