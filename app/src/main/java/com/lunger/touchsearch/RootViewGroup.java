@@ -38,14 +38,21 @@ public class RootViewGroup extends RelativeLayout {
 
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
+        // 结论：
+        // 返回true 表示将事件进行拦截，并将拦截到的事件交由当前层级的 onTouchEvent 进行处理
+        // 返回false 或 super.dispatchTouchEvent(ev)事件分发给孩子的dispatchTouchEvent
         if (ev.getAction() == MotionEvent.ACTION_DOWN)
             Log.d("wbl", "RootViewGroup -> onInterceptTouchEvent");
-        return super.onInterceptTouchEvent(ev);
+        return super.dispatchTouchEvent(ev);
     }
 
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
+        // 结论：
+        // 返回true 事件会死在这里
+        // 返回false 事件传给上一层的onTouchEvent 当本层有点击事件时，不可以响应
+        // 返回super.dispatchTouchEvent(ev) 事件传给上一层的onTouchEvent 当本层有点击事件时，可以响应
         if (event.getAction() == MotionEvent.ACTION_DOWN)
             Log.d("wbl", "RootViewGroup -> onTouchEvent");
         return super.onTouchEvent(event);

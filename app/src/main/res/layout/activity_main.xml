@@ -9,6 +9,7 @@
 
 
     <com.lunger.touchsearch.RootViewGroup
+        android:id="@+id/view_group"
         android:background="#55ff0000"
         android:layout_width="300dp"
         android:layout_centerInParent="true"
