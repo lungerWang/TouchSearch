@@ -43,7 +43,7 @@ public class RootViewGroup extends RelativeLayout {
         // 返回false 或 super.dispatchTouchEvent(ev)事件分发给孩子的dispatchTouchEvent
         if (ev.getAction() == MotionEvent.ACTION_DOWN)
             Log.d("wbl", "RootViewGroup -> onInterceptTouchEvent");
-        return super.dispatchTouchEvent(ev);
+        return super.onInterceptTouchEvent(ev);
     }
 
 

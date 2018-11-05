@@ -18,19 +18,19 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         child_view = findViewById(R.id.child_view);
         view_group = findViewById(R.id.view_group);
-//        child_view.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Log.d("wbl", "child_view onClick");
-//            }
-//        });
-//
-//        view_group.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Log.d("wbl", "view_group onClick");
-//            }
-//        });
+        child_view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d("wbl", "child_view onClick");
+            }
+        });
+
+        view_group.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d("wbl", "view_group onClick");
+            }
+        });
     }
 
     @Override
